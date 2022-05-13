@@ -1,0 +1,12 @@
+name: docker-actions
+on: [push]
+jobs:
+  check-docker:
+    runs-on: ubuntu-latest
+    container:
+      image: node:13.5.0-alpine3.10
+    steps:
+      - name: test container
+      - run: |
+        echo "this is pen"
+        cat /etc/os-release
