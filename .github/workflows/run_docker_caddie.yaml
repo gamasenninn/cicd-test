@@ -8,4 +8,4 @@ jobs:
       image: gamasenninn/scaddie #指定のdockerイメージを使用
     steps: #dockerコンテナ内でステップを実行
       - name: Log caddie
-        run: ls -la 
+        run: ls -la /app
