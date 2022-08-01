@@ -1,4 +1,5 @@
 name: caddie_container
+name: Container
 on: push
 
 jobs:
