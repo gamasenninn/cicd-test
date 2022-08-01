@@ -8,6 +8,7 @@ jobs:
     container: #起動するコンテナイメージを指定
       image: gamasenninn/scaddie #指定のdockerイメージを使用
     steps: #dockerコンテナ内でステップを実行
+      - uses: actions/checkout@v2
       - name: caddie unittest
         run: |
           cd /app
