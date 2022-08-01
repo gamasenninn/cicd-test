@@ -1,0 +1,12 @@
+name: caddie_container
+on: push
+
+jobs:
+  caddie-docker:
+    runs-on: ubuntu-latest
+    container: #起動するコンテナイメージを指定
+      image: gamasenninn/scaddie #指定のdockerイメージを使用
+    steps: #dockerコンテナ内でステップを実行
+      - name: Log caddie
+        run: cd /app
+        run: ls -la 
