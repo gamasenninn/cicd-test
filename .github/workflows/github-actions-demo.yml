@@ -1,9 +1,5 @@
 name: GitHub Actions Demo
-on:
-  pull_request:
-    #types: [opened, reopened]
-    path:
-      - 'model.py'
+on: push
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
