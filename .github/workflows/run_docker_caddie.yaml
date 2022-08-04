@@ -1,5 +1,9 @@
 name: caddie_container
-on: push
+on:
+  pull_request:
+    types: [opened, reopened]
+    path:
+      - 'model.py'
 
 jobs:
   caddie-docker:
