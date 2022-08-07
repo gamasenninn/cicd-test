@@ -1,9 +1,12 @@
 name: caddie_container
-on:
-  pull_request:
-    types: [opened, reopened]
-    path:
-      - 'model.py'
+on: [push]
+  path:
+    - 'models.py'
+#on:
+#  pull_request:
+#    types: [opened, reopened]
+#    path:
+#      - 'model.py'
 
 jobs:
   caddie-docker:
