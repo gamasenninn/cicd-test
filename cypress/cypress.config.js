@@ -3,6 +3,6 @@ module.exports = {
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    supportFile: 'support/e2e.js'
+    //supportFile: 'support/e2e.js'
   },
 };
