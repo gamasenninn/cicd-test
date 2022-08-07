@@ -20,4 +20,5 @@ jobs:
         if: always()
         with:
           name: cypress-videos
-          path: videos
+          path: cypress/videos
+      - run: ls . -la
