@@ -1,7 +1,5 @@
 name: caddie_container
 on: [push]
-  path:
-    - 'models.py'
 #on:
 #  pull_request:
 #    types: [opened, reopened]
