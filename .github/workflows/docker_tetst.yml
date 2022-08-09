@@ -17,6 +17,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      #Dockerfile build
+      - uses: docker/build-push-action@v2
+        with:
+          file: Dockerfile
+          tags: testDocker
+          push: false # pushしない      
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
