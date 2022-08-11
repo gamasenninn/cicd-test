@@ -1,19 +1,26 @@
 name: caddie_container
-on: [push]
+on:
+  push:
+    branches: none
+#on: [push]
 #on:
 #  pull_request:
 #    types: [opened, reopened]
 #    path:
 #      - 'model.py'
-
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 jobs:
   caddie-docker:
     runs-on: ubuntu-latest
     container: #起動するコンテナイメージを指定
       image: gamasenninn/scaddie #指定のdockerイメージを使用
+      ports:
+        - 5010
     steps: #dockerコンテナ内でステップを実行
       - uses: actions/checkout@v2
       - name: caddie unittest
         run: |
           cd /app
-          ls -la 
+          ls -la
+          curl http://localhost:5010
