@@ -23,4 +23,5 @@ jobs:
         run: |
           cd /app
           ls -la
-          curl https://www.yahoo.co.jp
+          wait-interval: 20
+          curl https://localhost:5010
