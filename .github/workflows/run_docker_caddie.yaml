@@ -24,6 +24,6 @@ jobs:
           cd /app
           ls -la
       - name: cypress test
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           wait-on: http://localhost:5010
