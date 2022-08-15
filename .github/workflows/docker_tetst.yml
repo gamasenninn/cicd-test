@@ -29,12 +29,12 @@ jobs:
           image: testdoocker
           run: |
             ls -la
-            curl http://localhost
+            #curl http://localhost
       - run: |
           ls -la
           #curl http://localhost:5010
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          wait-on: 'http://localhost:5010'
+          wait-on: 'http://localhost'
           working-directory: cypress
