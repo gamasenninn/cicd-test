@@ -17,6 +17,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+        run: |
+          ls -la
+          docker run -d -it --name testdocker -p 5010:80 tiangolo/uwsgi-nginx-flask:python3.8
+
       #Dockerfile build
       #- uses: docker/build-push-action@v2
       #  with:
@@ -24,10 +28,10 @@ jobs:
       #    tags: testdoocker
       #    push: false # pushしない      
       #docker run
-      - uses: addnab/docker-run-action@v3
-        with:
-          image: tiangolo/uwsgi-nginx-flask:python3.8
-          #run: ls -la
+      #- uses: addnab/docker-run-action@v3
+      #  with:
+      #    image: tiangolo/uwsgi-nginx-flask:python3.8
+      #    #run: ls -la
       - run: |
           ls -la
           docker ps -a
