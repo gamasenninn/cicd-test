@@ -36,6 +36,11 @@ jobs:
         run: |
           ls -la
           docker ps -a
-          curl http://localhost:5010
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          wait-on: 'http://localhost:5010'
+          working-directory: cypress
+
 
 
