@@ -22,12 +22,12 @@ jobs:
         with:
           file: Dockerfile
           tags: testdoocker
-          options: -p 5010:80
           push: false # pushしない      
       #docker run
       - uses: addnab/docker-run-action@v3
         with:
           image: testdoocker
+          options: -p 5010:80
           run: |
             ls -la
             #docker ps
