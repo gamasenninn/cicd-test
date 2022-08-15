@@ -1,4 +1,4 @@
-name: docke-test
+name: docke-test-nobuild
 on:
   push:
     branches: none
