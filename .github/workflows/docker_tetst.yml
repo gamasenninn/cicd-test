@@ -27,11 +27,12 @@ jobs:
       - uses: addnab/docker-run-action@v3
         with:
           image: testdoocker
-          run: ls -la
+          run: |
+            ls -la
+            curl http://localhost:5010
       - run: |
           ls -la
-          curl http://localhost:5001
-          curl http://localhost:5010
+          #curl http://localhost:5010
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
