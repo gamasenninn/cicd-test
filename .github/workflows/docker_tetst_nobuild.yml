@@ -27,7 +27,7 @@ jobs:
       - uses: addnab/docker-run-action@v3
         with:
           image: tiangolo/uwsgi-nginx-flask:python3.8
-          run: ls -la
+          #run: ls -la
       - run: |
           ls -la
           docker ps -a
