@@ -23,7 +23,7 @@ jobs:
         run: |
           cd /app
           ls -la
-          curl localhost:5010 
+          curl localhost
 #      - name: cypress test
 #        uses: cypress-io/github-action@v4
 #        with:
