@@ -29,6 +29,6 @@ jobs:
           image: tiangolo/uwsgi-nginx-flask:python3.8
           run: ls -la
       - run: |
-        ls -la
-        docker ps -a
+          ls -la
+          docker ps -a
 
