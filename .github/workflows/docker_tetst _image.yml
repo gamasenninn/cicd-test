@@ -1,4 +1,4 @@
-name: docke-test-nobuild
+name: docke-test
 on:
   push:
     branches: none
@@ -18,17 +18,26 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       #Dockerfile build
-      #- uses: docker/build-push-action@v2
-      #  with:
-      #    file: Dockerfile
-      #    tags: testdoocker
-      #    push: false # pushしない      
+      - uses: docker/build-push-action@v2
+        with:
+          file: Dockerfile
+          tags: testdoocker
+          options: -p 5010:80
+          push: false # pushしない      
       #docker run
       - uses: addnab/docker-run-action@v3
         with:
-          image: tiangolo/uwsgi-nginx-flask:python3.8
-          run: ls -la
+          image: testdoocker
+          run: |
+            ls -la
+            #docker ps
       - run: |
-        ls -la
-        docker ps -a
-        
+          ls -la
+          docker ps
+          #curl http://localhost:5010
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          #wait-on: 'http://localhost:5010'
+          working-directory: cypress
+          
