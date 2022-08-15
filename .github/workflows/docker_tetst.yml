@@ -28,3 +28,4 @@ jobs:
         with:
           image: testdoocker
           run: ls -la
+      - run: ls -la
