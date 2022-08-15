@@ -22,18 +22,19 @@ jobs:
         with:
           file: Dockerfile
           tags: testdoocker
-          options: -p 5010:80
           push: false # pushしない      
       #docker run
       - uses: addnab/docker-run-action@v3
         with:
           image: testdoocker
+          options: -p 5010:80
           run: |
             ls -la
             #docker ps
       - run: |
           ls -la
-          docker ps
+          docker ps --all
+          docker logs testdocker
           #curl http://localhost:5010
       - name: Cypress run
         uses: cypress-io/github-action@v4
