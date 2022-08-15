@@ -32,7 +32,10 @@ jobs:
       #  with:
       #    image: tiangolo/uwsgi-nginx-flask:python3.8
       #    #run: ls -la
-      - run: |
+      - name: test for Docker
+        run: |
           ls -la
           docker ps -a
+          curl http://localhost:5010
+
 
