@@ -34,6 +34,7 @@ jobs:
       - run: |
           ls -la
           docker ps --all
+          docker logs testdocker
           #curl http://localhost:5010
       - name: Cypress run
         uses: cypress-io/github-action@v4
