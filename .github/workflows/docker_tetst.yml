@@ -22,6 +22,7 @@ jobs:
         with:
           file: Dockerfile
           tags: testdoocker
+          options: -p 5010:80
           push: false # pushしない      
       #docker run
       - uses: addnab/docker-run-action@v3
@@ -29,7 +30,7 @@ jobs:
           image: testdoocker
           run: |
             ls -la
-            #curl http://localhost
+            #curl http://localhost:5010
       - run: |
           ls -la
           #curl http://localhost:5010
